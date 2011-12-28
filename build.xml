@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="gaeofy build" default="artifacts" basedir=".">
+
+	<description>gaeofy template</description>
+
+	<property name="version" value="0.0.1"/>
+	<property name="vraptor.core" value="../vraptor/vraptor-core"/>
+	<property name="vraptor.jar" value="${vraptor.core}/target/" />
+	<property name="core.lib.dir" value="${vraptor.core}/lib/mandatory"/>
+	<property name="gae.lib.dir" value="${vraptor.core}/lib/optional/gae"/>
+	<property name="compile.dir" value="build.tmp"/>
+	<property name="target.dir" value="target"/>
+	<property name="target.file" value="${target.dir}/gaeofy-${version}.jar" />
+
+	<path id="libs.classpath" path=".">
+		<fileset dir="../vraptor/common">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${vraptor.jar}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${core.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${gae.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${gae.lib.dir}/../upload" includes="*.jar"/>
+	</path>
+
+	<path id="compile.classpath">
+		<path refid="libs.classpath" />
+	</path>
+
+	<target name="compile" depends="clean" description="--> compiles classes">
+		<mkdir dir="${compile.dir}" />
+		<javac destdir="${compile.dir}" srcdir="src/" classpathref="compile.classpath" debug="true" encoding="UTF-8" target="1.5" source="1.5">
+			<compilerarg value="-Xlint:none" />
+		</javac>
+		<copy todir="${compile.dir}">
+			<fileset dir="src/" includes="META-INF/**" />
+		</copy>
+	</target>
+
+	<target name="artifacts" depends="compile" description="--> generate project's artifacts">
+		<mkdir dir="${target.dir}" />
+		<jar destfile="${target.file}" compress="true">
+			<fileset dir="${compile.dir}" includes="**" />
+		</jar>
+	</target>
+
+	<target name="clean" description="--> delete build artifacts">
+		<delete dir="${compile.dir}" />
+		<delete dir="${target.dir}" />
+	</target>
+	
+</project>

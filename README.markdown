@@ -22,8 +22,8 @@ Now create a class to register your entities like this:
 		}
 
 	}
-
-and you're done :)
+	
+done :D
 
 ## VRaptorGAE filter
 

@@ -42,7 +42,7 @@ Use the VRaptorGAE class to enable /_ah/admin, /appstats and /remote_api URIs
 		private final Result result;
 		private final DataStoreTemplate ds;
 	
-		public ThingController(Result result, DataStoreTemplate ds) {
+		public SampleController(Result result, DataStoreTemplate ds) {
 			this.result = result;
 			this.ds = ds;
 		}

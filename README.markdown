@@ -1,6 +1,7 @@
 # GAEOfy with VRaptor
 
-Import target/gaeofy-0.0.2.jar 
+Import target/gaeofy-0.0.2.jar
+
 Then configure it to be scanned
 
 	<context-param>
@@ -23,6 +24,15 @@ Now create a class to register your entities like this:
 	}
 
 and you're done :)
+
+## VRaptorGAE filter
+
+Use the VRaptorGAE class to enable /_ah/admin, /appstats and /remote_api URIs
+
+	<filter>
+		<filter-name>vraptor</filter-name>
+		<filter-class>br.com.caelum.vraptor.VRaptorGAE</filter-class>
+	</filter>
 
 ## Using the DataStoreTemplate:
 

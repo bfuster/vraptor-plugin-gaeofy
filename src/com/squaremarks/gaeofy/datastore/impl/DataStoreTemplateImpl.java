@@ -10,6 +10,11 @@ import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
 import com.squaremarks.gaeofy.datastore.DataStoreTemplate;
 
+import br.com.caelum.vraptor.ioc.ApplicationScoped;
+import br.com.caelum.vraptor.ioc.Component;
+
+@Component
+@ApplicationScoped
 public class DataStoreTemplateImpl implements DataStoreTemplate {
 
 	private final Objectify ofy;

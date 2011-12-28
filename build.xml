@@ -3,7 +3,7 @@
 
 	<description>gaeofy template</description>
 
-	<property name="version" value="0.0.1"/>
+	<property name="version" value="0.0.2"/>
 	<property name="vraptor.core" value="../vraptor/vraptor-core"/>
 	<property name="vraptor.jar" value="${vraptor.core}/target/" />
 	<property name="core.lib.dir" value="${vraptor.core}/lib/mandatory"/>

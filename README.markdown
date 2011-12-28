@@ -3,14 +3,18 @@
 Import target/gaeofy-0.0.2.jar 
 Then configure it to be scanned
 
-`<context-param>
+`
+<context-param>
 	<param-name>br.com.caelum.vraptor.packages</param-name>
 	<param-value>com.squaremarks.gaeofy</param-value>
-</context-param>`
+</context-param>
+`
 
 Now create a class to register your entities like this:
 
-`@Component
+`
+
+@Component
 @ApplicationScoped
 public class ObjectifyRegister {
 	
@@ -19,13 +23,16 @@ public class ObjectifyRegister {
 		register(Ticket.class);
 	}
 
-}`
+}
+
+`
 
 and you're done :)
 
 ## Using the DataStoreTemplate:
 
-`@Resource
+`
+@Resource
 public class SampleController {
 	
 	private final Result result;
@@ -61,11 +68,14 @@ public class SampleController {
 		result.use(json()).from(list).serialize();
 	}
 	
-}`
+}
+`
 
 ## Creating Repositories
 
-`interface UserRepository extends BasicRepository<User> {}`
+`
+interface UserRepository extends BasicRepository<User> {}
+`
 
 Interfaces included
 

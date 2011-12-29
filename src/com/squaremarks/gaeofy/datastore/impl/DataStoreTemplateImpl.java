@@ -8,6 +8,7 @@ import com.googlecode.objectify.AsyncObjectify;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
+import com.googlecode.objectify.Query;
 import com.squaremarks.gaeofy.datastore.DataStoreTemplate;
 
 import br.com.caelum.vraptor.ioc.ApplicationScoped;
@@ -118,6 +119,26 @@ public class DataStoreTemplateImpl implements DataStoreTemplate {
 
 	/*
 	 * (non-Javadoc)
+	 * @see com.squaremarks.gaeofy.datastore.DataStoreTemplate#query()
+	 */
+	@Override
+	public <T> Query<T> query() {
+		
+		return ofy().query();
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see com.squaremarks.gaeofy.datastore.DataStoreTemplate#query(java.lang.Class)
+	 */
+	@Override
+	public <T> Query<T> query(Class<T> clazz) {
+		
+		return ofy().query(clazz);
+	}
+	
+	/*
+	 * (non-Javadoc)
 	 * 
 	 * @see br.com.wesave.repository.DataStoreTemplate#ofy()
 	 */
@@ -125,5 +146,11 @@ public class DataStoreTemplateImpl implements DataStoreTemplate {
 	public Objectify ofy() {
 
 		return ofy;
+	}
+	
+	@Override
+	public AsyncObjectify ofyAsync() {
+		
+		return ofyAsync;
 	}
 }

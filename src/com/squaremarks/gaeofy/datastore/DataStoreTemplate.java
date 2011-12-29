@@ -2,8 +2,10 @@ package com.squaremarks.gaeofy.datastore;
 
 import java.util.List;
 
+import com.googlecode.objectify.AsyncObjectify;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Objectify;
+import com.googlecode.objectify.Query;
 
 /**
  * Objectify template
@@ -73,6 +75,19 @@ public interface DataStoreTemplate {
 	 * @return
 	 */
 	public <T> List<T> list(Class<T> clazz);
+	
+	/**
+	 * ofy().query();
+	 * @return
+	 */
+	public <T> Query<T> query();
+	
+	/**
+	 * ofy().query(Clazz)
+	 * @param clazz
+	 * @return
+	 */
+	public <T> Query<T> query(Class<T> clazz);
 
 	/**
 	 * Returns an ofy object
@@ -80,5 +95,11 @@ public interface DataStoreTemplate {
 	 * @return
 	 */
 	public Objectify ofy();
+	
+	/**
+	 * AsyncObjectify
+	 * @return
+	 */
+	public AsyncObjectify ofyAsync();
 
 }

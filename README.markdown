@@ -1,6 +1,6 @@
 # GAEOfy with VRaptor
 
-Import target/gaeofy-0.0.2.jar
+Import target/gaeofy-0.0.4.jar
 
 Then configure it to be scanned
 
@@ -11,14 +11,20 @@ Then configure it to be scanned
 
 
 Now create a class to register your entities like this:
-
+	
+	import static com.squaremarks.gaeofy.ofy.GAEOfy.register;
+	
 	@Component
 	@ApplicationScoped
 	public class ObjectifyRegister {
 	
 		static {
-			register(Event.class);
-			register(Ticket.class);
+			
+			register(User.class, Address.class)
+				.and(Product.class, StockItem.class)
+				.and(Stuff.class);
+			
+			//or call ObjectifyService.register() directly
 		}
 
 	}
@@ -27,7 +33,7 @@ done :D
 
 ## VRaptorGAE filter
 
-Use the VRaptorGAE class to enable /_ah/admin, /appstats and /remote_api URIs
+Use the VRaptorGAE filter to enable /_ah/admin, /appstats and /remote_api URIs
 
 	<filter>
 		<filter-name>vraptor</filter-name>
@@ -35,6 +41,9 @@ Use the VRaptorGAE class to enable /_ah/admin, /appstats and /remote_api URIs
 	</filter>
 
 ## Using the DataStoreTemplate:
+
+	Inject anywhere you want
+	You can access Objectfy through ofy() and ofyAsync()
 
 	@Resource
 	public class SampleController {
@@ -64,7 +73,7 @@ Use the VRaptorGAE class to enable /_ah/admin, /appstats and /remote_api URIs
 		@Get("/filter")
 		public void filter(String filter) {
 
-			List<Sample> list = ds.ofy().query(Sample.class).filter("name", filter).list();
+			List<Sample> list = ds.query(Sample.class).filter("name", filter).list();
 			serialize(list);
 		}
 	

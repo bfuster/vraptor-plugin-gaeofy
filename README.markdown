@@ -4,6 +4,7 @@ IMPORTANT:
 
 * only tested with VRaptor 3.4.0 and GAE 1.6.1
 * remove vraptor-gae.jar! this project contains the only fix needed to run on the mentioned environment ([check the issue #410 for more info] (https://github.com/caelum/vraptor/issues/410))
+* no dependency is shipped with this jar, you still need objectify-3.1
 
 ## Config
 

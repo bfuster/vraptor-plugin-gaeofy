@@ -1,5 +1,9 @@
 # GAEOfy with VRaptor
 
+IMPORTANT: 
+- only tested with VRaptor 3.4.0 and GAE 1.6.1
+- remove vraptor-gae.jar! this project contains the only fix needed to run on the mentioned environment (check this issue for more information: [#401](https://github.com/caelum/vraptor/issues/410))
+
 Import target/gaeofy-0.0.4.jar
 
 Then configure it to be scanned
@@ -28,17 +32,6 @@ Now create a class to register your entities like this:
 		}
 
 	}
-	
-done :D
-
-## VRaptorGAE filter
-
-Use the VRaptorGAE filter to enable /_ah, /appstats and /remote_api URIs
-
-	<filter>
-		<filter-name>vraptor</filter-name>
-		<filter-class>br.com.caelum.vraptor.VRaptorGAE</filter-class>
-	</filter>
 
 ## Using the DataStoreTemplate
 
@@ -83,6 +76,15 @@ You can access Objectfy through ofy() and ofyAsync()
 		}
 	
 	}
+
+## VRaptorGAE filter
+
+Use the VRaptorGAE filter to enable /_ah, /appstats and /remote_api URIs
+
+	<filter>
+		<filter-name>vraptor</filter-name>
+		<filter-class>br.com.caelum.vraptor.VRaptorGAE</filter-class>
+	</filter>
 
 ## Creating Repositories
 

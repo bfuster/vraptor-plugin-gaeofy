@@ -12,7 +12,7 @@ Then configure it to be scanned
 
 Now create a class to register your entities like this:
 	
-	import static com.squaremarks.gaeofy.ofy.GAEOfy.register;
+	import static com.squaremarks.gaeofy.GAEOfy.register;
 	
 	@Component
 	@ApplicationScoped

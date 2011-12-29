@@ -43,6 +43,7 @@ Use the VRaptorGAE filter to enable /_ah, /appstats and /remote_api URIs
 ## Using the DataStoreTemplate
 
 Inject DataStoreTemplate anywhere you want
+
 You can access Objectfy through ofy() and ofyAsync()
 
 	@Resource

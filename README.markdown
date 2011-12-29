@@ -33,17 +33,17 @@ done :D
 
 ## VRaptorGAE filter
 
-Use the VRaptorGAE filter to enable /_ah/admin, /appstats and /remote_api URIs
+Use the VRaptorGAE filter to enable /_ah, /appstats and /remote_api URIs
 
 	<filter>
 		<filter-name>vraptor</filter-name>
 		<filter-class>br.com.caelum.vraptor.VRaptorGAE</filter-class>
 	</filter>
 
-## Using the DataStoreTemplate:
+## Using the DataStoreTemplate
 
-	Inject anywhere you want
-	You can access Objectfy through ofy() and ofyAsync()
+Inject DataStoreTemplate anywhere you want
+You can access Objectfy through ofy() and ofyAsync()
 
 	@Resource
 	public class SampleController {

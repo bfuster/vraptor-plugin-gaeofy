@@ -5,6 +5,8 @@ IMPORTANT:
 * only tested with VRaptor 3.4.0 and GAE 1.6.1
 * remove vraptor-gae.jar! this project contains the only fix needed to run on the mentioned environment (check this issue for more information: [#401](https://github.com/caelum/vraptor/issues/410))
 
+## Config
+
 Import target/gaeofy-0.0.4.jar
 
 Then configure it to be scanned

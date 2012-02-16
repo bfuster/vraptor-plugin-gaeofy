@@ -1,3 +1,7 @@
+# GAEOfy blank project
+
+([https://github.com/bfuster/vraptor-gaeofy-blank](https://github.com/bfuster/vraptor-gaeofy-blank))
+
 # GAEOfy with VRaptor
 
 IMPORTANT:

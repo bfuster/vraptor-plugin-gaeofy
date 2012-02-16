@@ -1,4 +1,4 @@
-# GAEOfy blank project
+## GAEOfy blank project
 
 [https://github.com/bfuster/vraptor-gaeofy-blank](https://github.com/bfuster/vraptor-gaeofy-blank)
 
@@ -107,7 +107,3 @@ Interfaces included
 - RemoveRepository
 - ListRepository
 - LoadRespository
-
-## Blank project
-
-soon :)
